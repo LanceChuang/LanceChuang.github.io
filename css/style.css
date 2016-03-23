@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 @import url(font-awesome.min.css);
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
 
@@ -616,6 +616,8 @@
 
 			ul.unstyled li {
 				padding: 0.4em 0;
+                float:left;
+                margin-right:10px;
 			}
 
 		ul.icons {
