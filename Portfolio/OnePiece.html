@@ -3,58 +3,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
-  	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script>
-    $(document).bind('mobileinit',function(){
-        $.mobile.changePage.defaults.changeHash = false;
-        $.mobile.hashListeningEnabled = false;
-        $.mobile.pushStateEnabled = false;
-    });
-</script> 
-	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
-    <title>JQuery Sample</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/themes/Custom.css" />
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).bind('mobileinit', function () {
+            $.mobile.changePage.defaults.changeHash = false;
+            $.mobile.hashListeningEnabled = false;
+            $.mobile.pushStateEnabled = false;
+        });
+    </script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="css/custom.min.css">
 </head>
 <body>
-	<div data-role="page"id="FirstPage" data-title="草帽一夥海賊團">
-	<div data-role="header" data-theme="b">
-	<a href="#" data-role="button" data-icon="home">回家去</a>
-	<a href="#" data-role="button" data-icon="info">關於我們</a>
-		<h1>海賊王</h1>
-	</div>
-		<div data-role="content">
-			<img src ="image/one_piece.jpg" width="100%" />
-			<a href="JQsample1.html" data-rel="dialog">魯夫簡介</a><!-- 指定以對話方塊形式顯示超連結內容 -->
-			<a href="#crew" data-role="button" data-icon="arrow-r" data-theme="a">草帽一夥</a>
-			<div><h1><a href="mobile.html"data-role="button" data-icon="arrow-r" data-theme="b" >關於我們</a></h1></div>
-
-            <div><h1><a href="cooperation.html"data-role="button" data-icon="arrow-r" data-theme="c">賞金列表</a></h1></div>
-            <div><h1><a href="#Adventure" data-role="button" data-icon="arrow-r" data-theme="d">冒險故事</a></h1></div>
-
-            <div><h1><a href="Intro_video.html"data-role="button" data-icon="arrow-r" data-theme="e">簡介影片</a></h1></div>
-
-            <div><h1><a href="compare.html"data-role="button" data-icon="arrow-r" data-theme="a">未來展望</a></h1></div>
-
-            <div><h1><a href="link.html"data-role="button" data-icon="arrow-r" data-theme="b">加入草帽一夥</a></h1></div>
-		</div>
-		<div data-role="footer" data-position="fixed" data-theme="b">
-			<h1>Lance Product</h1>
-		</div>
-	</div>
-	<!--草帽一夥-->
-	<div data-role="page" id="crew" data-title="草帽一夥成員">
-		<div data-role="header">
-			</div>
-		<div data-role="content">
-			<div data-role="collapsible-set" data-theme="e">
-				<div data-role="collapsible">
-					<h3>蒙其D魯夫</h3>
-					<p>草帽海賊團船長，蠢蛋一枚，卻能吸引別人幫助他。目標是成為海賊王，找到大秘寶。</p>
-				</div>
-				<div data-role="collapsible">
-					<h3>喬巴</h3>
-					<p>船醫，夢想能成為治百病的神醫。</p>
-				</div>
+    <div data-role="page" id="FirstPage"  data-position="fixed" data-title="草帽一夥海賊團">
+        <div data-role="header"  data-position="fixed" data-theme="b">
+            <a href="#FirstPage" data-role="button" data-icon="home">回家去</a>
+            <a href="http://lancechuang.github.io/" data-role="button" data-icon="info">關於開發者</a>
+            <h1>海賊王</h1>
+        </div>
+        <div data-role="content">
+            <img src="image/one_piece.jpg" width="100%" />
+            <a href="#crew" data-role="button" data-icon="arrow-r" data-theme="b">草帽一夥</a>
+            <div><h1><a href="#About" data-role="button" data-icon="arrow-r" data-theme="b">關於我們</a></h1></div>
+            <div><h1><a href="#Bounty" data-role="button" data-icon="arrow-r" data-theme="b">賞金列表</a></h1></div>
+            <div><h1><a href="https://www.youtube.com/watch?v=xCDWC2WMW6s" data-role="button" data-icon="arrow-r" data-theme="a">簡介影片</a></h1></div>
+            <div><h1><a href="compare.html" data-role="button" data-icon="arrow-r" data-theme="b">未來展望</a></h1></div>
+            <div><h1><a href="link.html" data-role="button" data-icon="arrow-r" data-theme="b">加入草帽一夥</a></h1></div>
+        </div>
+        <div data-role="footer" data-theme="b">
+            <h1>Lance Product © 2016</h1>
+        </div>
+    </div>
+    <!--草帽一夥-->
+    <div data-role="page" id="crew" data-title="草帽一夥成員">
+        <div data-role="header" data-position="fixed"  data-theme="b">
+            <h3>角色介紹</h3>
+            <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-bars" href="#left-menu" style="padding:18px; background:none;"></a>
+        </div>
+        <div id="left-menu" data-role="panel" data-position="left" data-theme="b">
+            <a href="#About" class="ui-btn" data-theme="b">關於我們</a>
+            <a href="#Bounty" class="ui-btn" data-theme="b">賞金列表</a>
+            <a class="ui-btn" data-theme="b">Bing</a>
+            <a class="ui-btn" data-theme="b">Apple</a>
+            <a href="#FirstPage" class="ui-btn" data-theme="home">回家去</a>
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible-set" data-theme="e">
+                <div data-role="collapsible">
+                    <h3>蒙其D魯夫</h3>
+                    <p>草帽海賊團船長，蠢蛋一枚，卻能吸引別人幫助他。目標是成為海賊王，找到大秘寶。</p>
+                </div>
+                <div data-role="collapsible">
+                    <h3>喬巴</h3>
+                    <p>船醫，夢想能成為治百病的神醫。</p>
+                </div>
                 <div data-role="collapsible">
                     <h3>索龍</h3>
                     <p>劍士，魯夫第一個海賊夥伴，原先是賞金獵人，目標成為世界第一大劍豪。</p>
@@ -79,29 +84,101 @@
                     <h3>妮可 羅賓</h3>
                     <p>歷史學家，尋找歷史本文，希望找到空白100年的祕密。</p>
                 </div>
-			</div>
-		</div>
-		<div data-role="footer" data-position="fixed" data-theme="b">
-			<h1>Lance Product</h1>
-		</div>
-	</div>
-	<!--冒險故事-->
-	<div data-role="page" id="Adventure" data-title="草帽一夥冒險故事">
-		<div data-role="header">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#">故事介紹</a></li>
-					<li><a href="#">角色介紹</a></li>
-					<li><a href="#">精彩冒險</a></li>
-				</ul>
-			</div>
-		</div>
-		<div data-role="content">
-			<img src ="image/one_piece.jpg" width="100%" />
-		</div>
-		<div data-role="footer" data-position="fixed" data-theme="b">
-			<h1>Lance Product</h1>
-		</div>
-	</div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h1>Lance Product © 2016</h1>
+        </div>
+    </div>
+
+    <!--關於我們-->
+    <div data-role="page" id="About" data-title="關於我們">
+        <div data-role="header">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#">故事介紹</a></li>
+                    <li><a href="#">角色介紹</a></li>
+                    <li><a href="#">精彩冒險</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--賞金一覽表-->
+    <div data-role="page" id="Bounty" data-title="草帽一夥賞金">
+        <div data-role="header" data-theme="b">
+            <h3>賞金一覽</h3>
+            <a class="ui-btn ui-btn-left ui-btn-icon-left ui-icon-bars" href="#left-menu" style="padding:18px; background:none;"></a>
+        </div>
+        <div id="left-menu" data-role="panel" data-position="left" data-theme="b">
+            <a href="#crew" class="ui-btn" data-theme="b">草帽一夥</a>
+            <a href="#About" class="ui-btn" data-theme="b">關於我們</a>
+            <a class="ui-btn" data-theme="b">簡介影片</a>
+            <a class="ui-btn" data-theme="b">未來展望</a>
+            <a href="#FirstPage" class="ui-btn" data-theme="home">回家去</a>
+        </div>
+
+        <!--草帽海賊團人物賞金一覽表-->
+        <div data-role="content">
+            <div class="ui-grid-b  my-breakpoint">
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>魯夫</h3>
+                        <p>懸賞金額：3000萬貝里（惡龍事件）→1億貝里（巴洛克華克事件）→3億貝里（司法島事件）→4億貝里（頂點戰爭事件）→5億貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>索隆</h3>
+                        <p>懸賞金額：6000萬貝里（巴洛克華克事件）→1億2000萬貝里（司法島事件）→3億2000萬貝里（多雷斯羅薩事件</p>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>娜美</h3>
+                        <p>懸賞金額：1600萬貝里（司法島事件）→6600萬貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>G.O.D 騙人布(狙擊王)</h3>
+                        <p>懸賞金額：3000萬貝里（司法島事件）→2億貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>文斯莫克 香吉士</h3>
+                        <p>懸賞金額：7700萬貝里（司法島事件）→1億7700萬貝里（多雷斯羅薩事件）《必須活捉》</p>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>喬巴</h3>
+                        <p>懸賞金額：50貝里（司法島事件）→100貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>妮可羅賓</h3>
+                        <p>懸賞金額：7900萬貝里（歐哈拉事件）→8000萬貝里（司法島事件）→1億3000萬貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>佛朗基</h3>
+                        <p>懸賞金額：4400萬貝里（司法島事件）→9400萬貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div class="ui-bar ui-bar-a" style="height:auto">
+                        <h3>靈魂之王 布魯克</h3>
+                        <p>懸賞金額：3300萬貝里（50年前）[註 4]→8300萬貝里（多雷斯羅薩事件）</p>
+                    </div>
+                </div>
+            </div><!-- /grid-c -->
+        </div>
+        <div data-role="footer" data-theme="b">
+            <h1>Lance Product © 2016</h1>
+        </div>
+    </div>
 </body>
 </html>
