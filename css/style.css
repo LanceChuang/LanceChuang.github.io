@@ -616,9 +616,10 @@
 
 			ul.unstyled li {
 				padding: 0.4em 0;
-                float:left;
+                /*float:left;*/
                 margin-right:10px;
 			}
+       
 
 		ul.icons {
 			cursor: default;
