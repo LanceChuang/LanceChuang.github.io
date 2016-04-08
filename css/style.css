@@ -622,7 +622,7 @@
                 /*float:left;*/
                 margin-right:10px;
 			}
-       
+       .FloatLeft{float:left;}
 
 		ul.icons {
 			cursor: default;
