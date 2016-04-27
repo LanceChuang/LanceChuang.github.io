@@ -1193,7 +1193,10 @@
 			width: 4em;
 			cursor: pointer;
 		}
-
+		
+		#footer  	address{
+			color: #e1eef6
+		}
 /* Grid Demo */
 
 	.grid-demo {
