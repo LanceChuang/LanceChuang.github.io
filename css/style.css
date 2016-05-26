@@ -1226,3 +1226,9 @@
 		.grid-demo .row.flush > div:last-child span {
 			border-radius: 0 4px 4px 0;
 		}
+
+
+/*進入特效*/
+#banner{
+	transition: 1s ease-in;
+}
