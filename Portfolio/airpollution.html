@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PM2.5空氣品質即時污染指標</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    <!--建立地圖RL-->
+    var mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?zoom=11&size=500x320&center=臺北市';
+
+    $(function() {
+        //use ajax() to require info in JSONP
+        $.ajax({ //空氣品質即時污染指標網址
+            url: 'http://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000001/?format=json',
+            dataType: 'jsonp',
+            success: onSuccess, //成功時呼叫自訂函式nSuccess()
+            error: function(e) {
+                console.log('錯誤, 代碼:' + e.status);
+            }
+        });
+    });
+
+    //$.ajax()成功時執行
+    function onSuccess(data) { //要求成功，但沒有資料
+        if (data == null) {
+            alert("下載失敗!");
+            return;
+        }
+        //逐筆處理陣列中的資料
+        $.each(data.result.records, function(index) {
+            if (this.County == '臺北市') {
+                //開始建立markers 參數字串
+                var markerStr = '&markers=color:';
+                var pm25 = this["PM2.5"]; //取得PM2.5濃度值
+
+                //依濃度值的範圍，指定不同的顏色名稱
+                if (pm25 >= 71)
+                    markerStr += 'purple|'; //顏色名稱後要加分隔符號以便在串接測站名稱及縣市
+
+                else if (pm25 > 54)
+                    markerStr += 'red|';
+                else if (pm25 > 35)
+                    markerStr += 'orange|';
+                else
+                    markerStr += 'green|';
+
+                //後面串接測站名稱及縣市
+                markerStr += this.SiteName + ',' + this.County;
+
+                mapUrl += markerStr; //將參數字串附加到地圖URL後面
+            }
+        });
+
+        //立即顯示地圖
+        $('#pm25').attr('src', mapUrl);
+    }
+    </script>
+</head>
+
+<body>
+    <img id="pm25" src="" alt="載入資料中">
+    <div>
+        <p>細懸浮微粒(PM2.5)指標:</p>
+        <p>
+            <span style="color:green">● 低</span>
+            <span style="color:orange">● 中</span>
+            <span style="color:red">● 高</span>
+            <span style="color:purple">● 非常高</span>
+        </p>
+    </div>
+</body>
+
+</html>
