@@ -8,6 +8,10 @@
     <!--建立地圖RL-->
     var mapUrl = 'https://maps.googleapis.com/maps/api/staticmap?zoom=11&size=500x320&center=臺北市';
 
+    var mapUrl2 = 'https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=500x320&center=基隆市';
+
+    var mapUrl3 = 'https://maps.googleapis.com/maps/api/staticmap?zoom=10&size=500x320&center=桃園市';
+
     $(function() {
         //use ajax() to require info in JSONP
         $.ajax({ //空氣品質即時污染指標網址
@@ -46,19 +50,84 @@
 
                 //後面串接測站名稱及縣市
                 markerStr += this.SiteName + ',' + this.County;
-
+                console.log(markerStr); //check out markers amounts
                 mapUrl += markerStr; //將參數字串附加到地圖URL後面
             }
+             else if (this.County == '基隆市'){
+                //開始建立markers 參數字串
+                var markerStr = '&markers=color:';
+                var pm25 = this["PM2.5"]; //取得PM2.5濃度值
+
+                //依濃度值的範圍，指定不同的顏色名稱
+                if (pm25 >= 71)
+                    markerStr += 'purple|'; //顏色名稱後要加分隔符號以便在串接測站名稱及縣市
+
+                else if (pm25 > 54)
+                    markerStr += 'red|';
+                else if (pm25 > 35)
+                    markerStr += 'orange|';
+                else
+                    markerStr += 'green|';
+
+                //後面串接測站名稱及縣市
+                markerStr += this.SiteName + ',' + this.County;
+                console.log(markerStr); //check out markers amounts
+                mapUrl2 += markerStr; //將參數字串附加到地圖URL後面
+             }
+              else if (this.County == '桃園市'){
+                var markerStr = '&markers=color:';
+                var pm25 = this["PM2.5"]; //取得PM2.5濃度值
+
+                //依濃度值的範圍，指定不同的顏色名稱
+                if (pm25 >= 71)
+                    markerStr += 'purple|'; //顏色名稱後要加分隔符號以便在串接測站名稱及縣市
+
+                else if (pm25 > 54)
+                    markerStr += 'red|';
+                else if (pm25 > 35)
+                    markerStr += 'orange|';
+                else
+                    markerStr += 'green|';
+
+                //後面串接測站名稱及縣市
+                markerStr += this.SiteName + ',' + this.County;
+                console.log(markerStr); //check out markers amounts
+                mapUrl3 += markerStr; //將參數字串附加到地圖URL後面
+              }
         });
 
         //立即顯示地圖
-        $('#pm25').attr('src', mapUrl);
+        $('#Taipei').attr('src', mapUrl);
+        $('#Keelung').attr('src', mapUrl2);
+        $('#Taoyuan').attr('src', mapUrl3);
     }
     </script>
 </head>
 
 <body>
-    <img id="pm25" src="" alt="載入資料中">
+    <img id="Taipei" src="" alt="載入資料中">
+    <div>
+        <p>細懸浮微粒(PM2.5)指標:</p>
+        <p>
+            <span style="color:green">● 低</span>
+            <span style="color:orange">● 中</span>
+            <span style="color:red">● 高</span>
+            <span style="color:purple">● 非常高</span>
+        </p>
+    </div>
+
+    <img id="Keelung" src="" alt="載入資料中">
+    <div>
+        <p>細懸浮微粒(PM2.5)指標:</p>
+        <p>
+            <span style="color:green">● 低</span>
+            <span style="color:orange">● 中</span>
+            <span style="color:red">● 高</span>
+            <span style="color:purple">● 非常高</span>
+        </p>
+    </div>
+
+    <img id="Taoyuan" src="" alt="載入資料中">
     <div>
         <p>細懸浮微粒(PM2.5)指標:</p>
         <p>
