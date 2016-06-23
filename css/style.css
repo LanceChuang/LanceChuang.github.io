@@ -932,6 +932,7 @@
 			opacity: 0.25;
 		}
 
+
 /* Header */
 
 	body.landing #header {
@@ -954,6 +955,7 @@
 		line-height: 6em;
 		width: 100%;
 		z-index: 10000;
+		position: fixed;
 	}
 
 		#header h1 {
