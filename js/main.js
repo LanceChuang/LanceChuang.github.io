@@ -12,7 +12,8 @@ $(function () {
     	strings: '<span>I\'m becoming a student in USC!</span>',
     	speed: 100,
     	lifeLike: true,
-    	autoStart: true
+    	autoStart: true,
+    	loop: true
     })
     .tiPause(900).tiDelete(29).tiType('<span> pursue Data Science!</span>')
     .tiType('<p>Looking for an internship</p>');

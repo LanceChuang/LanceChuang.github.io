@@ -1,7 +1,7 @@
 ﻿@charset "UTF-8";
 @import url(font-awesome.min.css);
 @import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
-
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 /*
 	Transit by TEMPLATED
 	templated.co @templatedco
@@ -116,13 +116,45 @@
 			margin: 3em 0;
 		}
 
-	blockquote {
-		border-left: solid 4px rgba(144, 144, 144, 0.25);
-		font-style: italic;
+	.testimonial{
 		margin: 0 0 2em 0;
 		padding: 0.5em 0 0.5em 2em;
+        text-align: left;
 	}
-
+	.testimonial:before, .testimonial:after{
+		display: inline-block;
+        font-size: 7rem;
+		content: "\201C";
+       	top: -7px;
+	}
+	.testimonial:before{
+		content: "\201C";
+		float: left;
+	
+	}
+	.testimonial:after{
+		content:"\201D";
+        float: right;
+	}
+	blockquote {
+		font-family: 'cwTeXFangSong', serif;
+		font-size: 30px;
+	}
+	blockquote:before,blockquote:after{
+    	/*display: inline-block;
+        font-size: 7rem;*/
+	}
+	blockquote:before{
+		/*content: "\201C";*/
+		/*font-size: 7rem;*/
+		/*top: -7px;
+		float: left;*/
+	}
+	blockquote:after{
+		/*content: "\201D";*/
+		/*font-size: 7rem;*/
+	}
+	
 	code {
 		background: rgba(144, 144, 144, 0.075);
 		border-radius: 4px;
