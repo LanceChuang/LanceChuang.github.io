@@ -237,6 +237,7 @@
 			font-size: 1.5em;
 		}
 
+	
 /* Form */
 
 	form {
@@ -970,14 +971,17 @@
 	body.landing #header {
 		background-color: transparent;
 		left: 0;
-		position: absolute;
+		position: fixed;
 		top: 0;
+
 	}
 
 		body.landing #header nav a {
-			color: rgba(255, 255, 255, 0.5);
+			/*color: rgba(255, 255, 255, 0.5);*/
+			color: #e94e77;
 		}
 
+	
 	#header {
 		background-color: #383b43;
 		color: #ffffff;
@@ -1034,10 +1038,11 @@
 						color: #cdced0;
 						display: inline-block;
 						text-decoration: none;
+						font-size: 22px;
 					}
 
 						#header nav > ul > li a:active, #header nav > ul > li a:hover {
-							color: #ffffff;
+							color: #8EC0E4;
 						}
 
 					#header nav > ul > li:first-child {
