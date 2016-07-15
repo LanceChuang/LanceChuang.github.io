@@ -123,9 +123,9 @@
 	}
 	.testimonial:before, .testimonial:after{
 		display: inline-block;
-        font-size: 7rem;
+        font-size: 5rem;
 		content: "\201C";
-       	top: -7px;
+		bottom: 10px;
 	}
 	.testimonial:before{
 		content: "\201C";
@@ -1270,4 +1270,8 @@
 /*進入特效*/
 #banner{
 	transition: 1s ease-in;
+}
+
+.portfolio{
+	width: 50%;
 }
