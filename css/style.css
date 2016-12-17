@@ -969,7 +969,7 @@
 /* Header */
 
 	body.landing #header {
-		background-color: transparent;
+		background-color: #444;
 		left: 0;
 		position: fixed;
 		top: 0;
